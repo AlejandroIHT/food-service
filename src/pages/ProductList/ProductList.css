@@ -1,0 +1,9 @@
+.product-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+  row-gap: 4rem;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
