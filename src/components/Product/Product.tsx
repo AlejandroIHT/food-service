@@ -25,7 +25,7 @@ const Product = ({
         </Button>
       </div>
       <h4>{name}</h4>
-      <p>{`$${price}`}</p>
+      <p>{`${price}`}</p>
     </div>
   );
 };
