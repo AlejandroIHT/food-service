@@ -26,13 +26,12 @@
   padding: 0.5rem;
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 1rem;
 }
 
 .product__content > span {
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 6px;
   background-color: var(--main-color);
   color: var(--gray-light);
   padding: 0.25rem 0.5rem;
