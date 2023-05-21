@@ -1,9 +1,25 @@
+:root {
+  /* Colors */
+  --main-color: #78A671;
+  --gray-light: #F5F5F5;
+  --gray: #E9E9EB;
+  --gray-dark: #5E5E5E;
+  --black: #281116;
+
+  /* Font sizes */
+  --font-size-small: 0.5rem;
+  --font-size-medium: 0.75rem;
+  --font-size-large: 1rem;
+  --font-size-xlarge: 1.2rem;
+  --font-size-xxlarge: 1.6rem;
+}
+
 html, body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
 }
 
 * {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
