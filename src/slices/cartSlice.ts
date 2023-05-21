@@ -34,9 +34,61 @@ export const cartSlice = createSlice({
       if (cartFromLocalStorage.length !== 0) {
         state.cart = [...cartFromLocalStorage];
       }
+    },
+    removeItemFromCart: (state, action) => {
+      const tail = action.payload as string;
+      const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+      const indexOfProductInCart = cartFromLocalStorage.findIndex((item: ProducrListInCart) => 
+        item.tail === tail
+      );
+
+      if (indexOfProductInCart !== -1) {
+        cartFromLocalStorage.splice(indexOfProductInCart, 1);
+        localStorage.setItem("cart", JSON.stringify(cartFromLocalStorage));
+        state.cart = cartFromLocalStorage;
+      }
+    },
+    increaseQuantity: (state, action) => {
+      const { tail } = action.payload as ProducrListInCart;
+      const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+      const indexOfProductInCart = cartFromLocalStorage.findIndex((item: ProducrListInCart) => 
+        item.tail === tail
+      );
+
+      if (indexOfProductInCart !== -1) {
+        cartFromLocalStorage[indexOfProductInCart].quantity++;
+        localStorage.setItem("cart", JSON.stringify(cartFromLocalStorage));
+        state.cart = cartFromLocalStorage;
+      }
+    },
+    decreaseQuantity: (state, action) => {
+      const { tail } = action.payload as ProducrListInCart;
+      const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+      const indexOfProductInCart = cartFromLocalStorage.findIndex((item: ProducrListInCart) => 
+        item.tail === tail
+      );
+
+      if (indexOfProductInCart !== -1) {
+        const shouldRemoveItem = cartFromLocalStorage[indexOfProductInCart].quantity === 1;
+
+        if (shouldRemoveItem) {
+          cartFromLocalStorage.splice(indexOfProductInCart, 1);
+        } else {
+          cartFromLocalStorage[indexOfProductInCart].quantity--;
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cartFromLocalStorage));
+        state.cart = cartFromLocalStorage;
+      }
     }
   },
 })
 
-export const { addToCart, addAllToCartFromLocalStorage } = cartSlice.actions;
+export const { 
+  addToCart, 
+  addAllToCartFromLocalStorage, 
+  removeItemFromCart,
+  increaseQuantity,
+  decreaseQuantity
+} = cartSlice.actions;
 export default cartSlice.reducer;
