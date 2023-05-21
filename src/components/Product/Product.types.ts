@@ -1,6 +1,6 @@
 export interface ProductProps {
   name: string;
-  price: number;
+  price: string;
   type: string;
   img: string;
   buttonText: string;
