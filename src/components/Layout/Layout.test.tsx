@@ -3,7 +3,7 @@ import Layout from "./Layout";
 
 describe("Layout", () => {
   test("renders correctly", () => {
-    render(<Layout>children</Layout>);
-    expect(screen.getByText("children")).toBeInTheDocument();
+    const { container } = render(<Layout />);
+    expect(container.querySelector(".layout")).toBeInTheDocument();
   });
 });
