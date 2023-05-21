@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 const product = {
   name: "Cheese Pizza",
-  price: 5,
+  price: "52",
   type: "pizza",
   img: "img",
   buttonText: "Add to cart",
@@ -28,7 +28,7 @@ describe("Product", () => {
       />
     );
     expect(screen.getByText(product.name)).toBeInTheDocument();
-    expect(screen.getByText(`$${product.price}`)).toBeInTheDocument();
+    expect(screen.getByText(`${product.price}`)).toBeInTheDocument();
     expect(screen.getByText(product.type)).toBeInTheDocument();
     expect(screen.getByText(product.buttonText)).toBeInTheDocument();
     expect(screen.getByRole("img")).toBeInTheDocument();

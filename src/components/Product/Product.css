@@ -43,4 +43,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 192px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product__wrapper-img > img {
+  width: 55%;
+  height: auto;
+  object-fit: contain;
 }
