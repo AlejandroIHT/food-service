@@ -6,6 +6,7 @@ import Spinner from "../../components/Spinner";
 import { Amiibo } from "../../services/productList/productList.types";
 import { formatPrice } from "../../utils/format";
 import "./ProductList.css";
+import ErrorMessage from "../../components/ErrorMessage";
 
 const ProductList = () => {
   const { data: productList, isLoading, isError } = useProductList();
@@ -16,6 +17,7 @@ const ProductList = () => {
   return (
     <>
       {isLoading && <Spinner />}
+      {isError && <ErrorMessage errorMessage="Something went wrong..." />}
       <div className="product-list">
         {shouldRenderProducts &&
           productList.amiibo.map((product: Amiibo) => {
