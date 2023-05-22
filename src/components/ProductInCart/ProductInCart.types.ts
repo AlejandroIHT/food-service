@@ -2,4 +2,5 @@ import { ProductDetailInTheCart } from "../../pages/ProductList/ProductList.type
 
 export interface ProductInCartProps {
   product: ProductDetailInTheCart;
+  enableRemoveProduct?: boolean;
 }

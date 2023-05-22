@@ -49,7 +49,7 @@ export const cartSlice = createSlice({
       }
     },
     increaseQuantity: (state, action) => {
-      const { tail } = action.payload;
+      const tail = action.payload as string;
       const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
       const indexOfProductInCart = cartFromLocalStorage.findIndex((item: ProductDetailInTheCart) => 
         item.tail === tail
@@ -62,7 +62,7 @@ export const cartSlice = createSlice({
       }
     },
     decreaseQuantity: (state, action) => {
-      const { tail } = action.payload;
+      const tail = action.payload as string;
       const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
       const indexOfProductInCart = cartFromLocalStorage.findIndex((item: ProductDetailInTheCart) => 
         item.tail === tail

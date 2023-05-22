@@ -1,19 +1,36 @@
 import { useDispatch } from "react-redux";
+import classNames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { formatPrice } from "../../utils/format";
 import ChangeQuantityBtn from "../ChangeQuantityBtn/ChangeQuantityBtn";
 import { ProductInCartProps } from "./ProductInCart.types";
-import { decreaseQuantity, increaseQuantity } from "../../slices/cartSlice";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeItemFromCart,
+} from "../../slices/cartSlice";
 import "./ProductInCart.css";
+import Button from "../Button";
 
-const ProductInCart = ({ product }: ProductInCartProps) => {
+const ProductInCart = ({
+  product,
+  enableRemoveProduct,
+}: ProductInCartProps) => {
   const dispatch = useDispatch();
   const { tail, name, image, quantity, price } = product;
 
-  const handleDecreaseClick = () => dispatch(decreaseQuantity({ tail }));
-  const handleIncreaseClick = () => dispatch(increaseQuantity({ tail }));
+  const handleDecreaseClick = () => dispatch(decreaseQuantity(tail));
+  const handleIncreaseClick = () => dispatch(increaseQuantity(tail));
+  const handleRemoveClick = () => dispatch(removeItemFromCart(tail));
 
   return (
-    <div className="product-in-cart">
+    <div
+      className={classNames(
+        "product-in-cart",
+        enableRemoveProduct && "product-in-cart--with-remove"
+      )}
+    >
       <div className="product-in-cart__wrapper-img">
         <img src={image} alt={name} />
       </div>
@@ -26,6 +43,14 @@ const ProductInCart = ({ product }: ProductInCartProps) => {
         onDecreaseClick={handleDecreaseClick}
         onIncreaseClick={handleIncreaseClick}
       />
+      {enableRemoveProduct && (
+        <Button
+          className="product-in-cart__remove-btn"
+          onClick={handleRemoveClick}
+        >
+          <FontAwesomeIcon icon={faXmark} />
+        </Button>
+      )}
     </div>
   );
 };

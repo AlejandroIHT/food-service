@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../../components/Layout";
 import ProductList from "../../pages/ProductList";
+import Checkout from "../../pages/Checkout";
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<ProductList />} />
-        {/* TODO: Create Checkout component */}
-        {/*<Route path="checkout" element={<h1>Checkout</h1>} />*/}
+        <Route path="checkout" element={<Checkout />} />
       </Route>
     </Routes>
   );
