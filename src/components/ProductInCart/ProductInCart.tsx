@@ -47,6 +47,7 @@ const ProductInCart = ({
         <Button
           className="product-in-cart__remove-btn"
           onClick={handleRemoveClick}
+          data-testid="remove-btn"
         >
           <FontAwesomeIcon icon={faXmark} />
         </Button>
