@@ -19,3 +19,9 @@
   font-weight: 600;
   color: var(--gray-light);
 }
+
+.header__dropdown {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
