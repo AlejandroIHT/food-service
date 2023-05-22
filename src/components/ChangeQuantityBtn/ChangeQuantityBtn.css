@@ -1,0 +1,25 @@
+.change-quantity-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.change-quantity-btn > button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--gray-light);
+  cursor: pointer;
+}
+
+.change-quantity-btn > p {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+}
