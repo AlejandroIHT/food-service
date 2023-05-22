@@ -3,7 +3,7 @@ import ChangeQuantityBtn from "./ChangeQuantityBtn";
 import userEvent from "@testing-library/user-event";
 
 const changeQuantityBtnProps = {
-  quantity: "1",
+  quantity: 1,
   onIncreaseClick: jest.fn(),
   onDecreaseClick: jest.fn(),
 };

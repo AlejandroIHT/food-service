@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 const dropdownProps = {
   title: "title",
+  totalCost: "$100",
   className: "test",
   onCloseClick: jest.fn(),
   onGoToCheckoutClick: jest.fn(),
@@ -14,6 +15,7 @@ describe("Dropdown", () => {
     render(
       <Dropdown
         title={dropdownProps.title}
+        totalCost={dropdownProps.totalCost}
         onCloseClick={dropdownProps.onCloseClick}
         onGoToCheckoutClick={dropdownProps.onGoToCheckoutClick}
       >
@@ -30,6 +32,7 @@ describe("Dropdown", () => {
     render(
       <Dropdown
         title={dropdownProps.title}
+        totalCost={dropdownProps.totalCost}
         onCloseClick={dropdownProps.onCloseClick}
         onGoToCheckoutClick={dropdownProps.onGoToCheckoutClick}
       >
@@ -47,6 +50,7 @@ describe("Dropdown", () => {
     render(
       <Dropdown
         title={dropdownProps.title}
+        totalCost={dropdownProps.totalCost}
         onCloseClick={dropdownProps.onCloseClick}
         onGoToCheckoutClick={dropdownProps.onGoToCheckoutClick}
       >

@@ -11,11 +11,6 @@ const ProductList = () => {
   const { data: productList, isLoading, isError } = useProductList();
   const dispatch = useDispatch();
 
-  //TODO: MOVE TO CART COMPONENT
-  /*const cart = useSelector(
-    (state: { cart: ProducrListInCart[] }) => state.cart
-  );*/
-
   const shouldRenderProducts = !isLoading && !isError;
 
   return (
@@ -23,17 +18,23 @@ const ProductList = () => {
       {isLoading && <Spinner />}
       <div className="product-list">
         {shouldRenderProducts &&
-          productList.amiibo.map((product: Amiibo) => (
-            <Product
-              key={product.tail}
-              name={product.name}
-              price={formatPrice.format(Math.round(Math.random() * 100000))}
-              type={product.type}
-              img={product.image}
-              buttonText="Add to cart"
-              onAddToCart={() => dispatch(addToCart(product))}
-            />
-          ))}
+          productList.amiibo.map((product: Amiibo) => {
+            const productWithPrice = {
+              ...product,
+              price: Math.round(Math.random() * 100000),
+            };
+            return (
+              <Product
+                key={productWithPrice.tail}
+                name={productWithPrice.name}
+                price={formatPrice.format(productWithPrice.price)}
+                type={productWithPrice.type}
+                img={productWithPrice.image}
+                buttonText="Add to cart"
+                onAddToCart={() => dispatch(addToCart(productWithPrice))}
+              />
+            );
+          })}
       </div>
     </>
   );
