@@ -13,3 +13,9 @@
   background-color: var(--main-color);
   color: var(--gray-light);
 }
+
+.button:disabled {
+  background-color: var(--gray);
+  color: var(--gray-light);
+  cursor: not-allowed;
+}
