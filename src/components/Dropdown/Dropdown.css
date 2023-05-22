@@ -42,3 +42,10 @@
   font-size: var(--font-size-large);
   font-weight: 600;
 }
+
+.dropdown__content {
+  height: 100%;
+  overflow: auto;
+  align-self: baseline;
+  padding-top: 1rem;
+}
