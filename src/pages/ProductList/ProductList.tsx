@@ -23,7 +23,7 @@ const ProductList = () => {
       {isLoading && <Spinner />}
       <div className="product-list">
         {shouldRenderProducts &&
-          productList.amiibo.map((product: Amiibo, index: number) => (
+          productList.amiibo.map((product: Amiibo) => (
             <Product
               key={product.tail}
               name={product.name}
