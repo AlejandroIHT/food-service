@@ -1,9 +1,9 @@
 export interface DropdownProps {
   children: React.ReactNode;
   title: string;
+  totalCost: string;
   className?: string;
-  isOpen?: boolean;
-  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  goToCheckoutDisabled?: boolean;
   onCloseClick: () => void;
   onGoToCheckoutClick: () => void;
 }

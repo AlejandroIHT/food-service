@@ -8,7 +8,9 @@ import Button from "../Button";
 const Dropdown = ({
   children,
   title,
+  totalCost,
   className,
+  goToCheckoutDisabled,
   onCloseClick,
   onGoToCheckoutClick,
 }: DropdownProps) => {
@@ -20,9 +22,13 @@ const Dropdown = ({
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </div>
-      {children}
-      <p className="dropdown__total-cost">TOTAL COST:</p>
-      <Button className="dropdown__checkout-btn" onClick={onGoToCheckoutClick}>
+      <div className="dropdown__content">{children}</div>
+      <p className="dropdown__total-cost">{`TOTAL COST: ${totalCost}`}</p>
+      <Button
+        className="dropdown__checkout-btn"
+        disabled={goToCheckoutDisabled}
+        onClick={onGoToCheckoutClick}
+      >
         GO TO CHECKOUT
       </Button>
     </div>
