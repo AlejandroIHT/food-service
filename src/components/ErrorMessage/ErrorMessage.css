@@ -1,0 +1,4 @@
+.error-message > p {
+    color: var(--gray-dark);
+    font-size: var(--font-size-xlarge);;
+}

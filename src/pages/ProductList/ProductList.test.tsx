@@ -54,4 +54,17 @@ describe("ProductList", () => {
     userEvent.click(addToCartBtn);
     expect(mockDispatchFn).toHaveBeenCalled();
   });
+
+  test("should render error message", () => {
+    mockUseProductList.mockReturnValue({
+      data: null,
+      isLoading: false,
+      isError: true,
+    } as any);
+    render(<ProductList />);
+
+    expect(mockUseProductList).toHaveBeenCalled();
+    expect(screen.queryByText("Mario")).not.toBeInTheDocument();
+    expect(screen.getByText("Something went wrong...")).toBeInTheDocument();
+  });
 });
