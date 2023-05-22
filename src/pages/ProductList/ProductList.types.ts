@@ -1,5 +1,6 @@
 import { Amiibo } from "../../services/productList/productList.types";
 
-export interface ProducrListInCart extends Amiibo {
+export interface ProductDetailInTheCart extends Amiibo {
   quantity: number;
+  price: number;
 }
