@@ -1,5 +1,5 @@
 export interface ChangeQuantityBtnProps { 
-  quantity: string;
+  quantity: number;
   onIncreaseClick: () => void;
   onDecreaseClick: () => void; 
   className?: string;
