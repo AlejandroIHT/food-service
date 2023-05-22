@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+## How was build
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), was used[TypeScript](https://www.typescriptlang.org/), hooks from [React](https://es.reactjs.org/docs/hooks-intro.html) as well, [React Query](https://react-query.tanstack.com/) for controling state of request, finaly it was used [Redux](https://redux.js.org/tutorials/essentials/part-2-app-structure) for the global state of the app.
+
+## Installation
+
+You will need node and npm installed globally on your machine.
+
+In the project folder use code:
+
+```bash
+  npm install
+```
 
 ## Available Scripts
 
