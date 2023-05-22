@@ -6,6 +6,9 @@
   --gray-dark: #5E5E5E;
   --black: #281116;
 
+  /* Shadows */
+  --light-shadow: rgba(94,94,94,0.15);
+
   /* Font sizes */
   --font-size-small: 0.5rem;
   --font-size-medium: 0.75rem;
