@@ -12,11 +12,11 @@ const ChangeQuantityBtn = ({
 }: ChangeQuantityBtnProps) => {
   return (
     <div className={classNames("change-quantity-btn", className)}>
-      <button onClick={onDecreaseClick}>
+      <button data-testid="decrease-btn" onClick={onDecreaseClick}>
         <FontAwesomeIcon icon={faMinus} />
       </button>
       <p>{quantity}</p>
-      <button onClick={onIncreaseClick}>
+      <button data-testid="increase-btn" onClick={onIncreaseClick}>
         <FontAwesomeIcon icon={faPlus} />
       </button>
     </div>
