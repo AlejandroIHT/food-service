@@ -16,7 +16,7 @@ const Dropdown = ({
     <div className={classNames("dropdown", className)}>
       <div className="dropdown__header">
         <h4>{title}</h4>
-        <button onClick={onCloseClick}>
+        <button data-testid="close-btn" onClick={onCloseClick}>
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </div>
