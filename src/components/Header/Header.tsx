@@ -8,6 +8,7 @@ import ProductInCart from "../ProductInCart";
 import { ProductDetailInTheCart } from "../../pages/ProductList/ProductList.types";
 import { useMemo, useState } from "react";
 import { getTotalCost } from "../../utils/products";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -15,9 +16,14 @@ const Header = () => {
     (state: { cart: { cartItems: ProductDetailInTheCart[] } }) =>
       state.cart.cartItems
   );
+  const navigate = useNavigate();
 
   const handleDropdownClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+  const handleGoBackClick = () => {
+    setIsDropdownOpen(false);
+    navigate("/checkout");
   };
 
   const totalCost = useMemo(
@@ -38,7 +44,7 @@ const Header = () => {
           totalCost={totalCost}
           goToCheckoutDisabled={shouldBeDisabledTheGoToCheckoutBtn}
           onCloseClick={handleDropdownClick}
-          onGoToCheckoutClick={() => ({})}
+          onGoToCheckoutClick={handleGoBackClick}
         >
           {productListInTheCart.map((product) => (
             <ProductInCart key={product.tail} product={product} />
